@@ -4,7 +4,8 @@ import type { Id } from "../../../convex/_generated/dataModel";
 
 export function ToDoList() {
     const todos = useQuery(api.functions.listTodos);
-    <ul className="space-y-2">
+    return(
+        <ul className="space-y-2">
       {todos?.map(({_id, title,description, completed},index) => (
         <ToDoItem
         key = {index}
@@ -15,6 +16,7 @@ export function ToDoList() {
          />
       ))}
      </ul>
+    )
 }
 
 function ToDoItem({id, title, description, completed}:{
