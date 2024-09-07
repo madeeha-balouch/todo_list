@@ -13,15 +13,10 @@ export const createTodo = mutation({
         description: v.string()
     },
     handler: async (ctx,args) => {
-        const user = await ctx.auth.getUserIdentity();
-        if(!user){
-            throw new Error("Unauthorized");
-        }
         await ctx.db.insert("todos",{
             title: args.title,
             description: args.description,
-            completed: false,
-            userId: user.tokenIdentifier
+            completed: false
         })
     }
 })
