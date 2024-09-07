@@ -3,6 +3,7 @@ import { Authenticated, Unauthenticated } from "convex/react";
 import { NewToDoForm } from "./_components/new-todo-form";
 import { ToDoList } from "./_components/to-do-list";
 import { SignInButton, UserButton } from "@clerk/nextjs";
+//pushing to vercel
 export default function Home() {
 
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         </div>
         <ToDoList />
         <NewToDoForm />
+        
       </Authenticated>
       <Unauthenticated>
         <p className="text-gray-600">Please Sign In to continue</p>
