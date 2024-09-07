@@ -1,5 +1,5 @@
 "use client"
-import { Authenticated, Unauthenticated, AuthLoading } from "convex/react";
+import { Authenticated, Unauthenticated } from "convex/react";
 import { NewToDoForm } from "./_components/new-todo-form";
 import { ToDoList } from "./_components/to-do-list";
 import { SignInButton, UserButton } from "@clerk/nextjs";
@@ -21,9 +21,6 @@ export default function Home() {
           <button className="p-1 bg-blue-500 text-white rounded">Sign In</button>
         </SignInButton>
       </Unauthenticated>
-      <AuthLoading>
-        <p>Loading...</p>
-      </AuthLoading>
     </div>
   );
 }
