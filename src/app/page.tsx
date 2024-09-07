@@ -1,7 +1,8 @@
 "use client"
-import { Authenticated } from "convex/react";
+import { Authenticated, Unauthenticated } from "convex/react";
 import { NewToDoForm } from "./_components/new-todo-form";
 import { ToDoList } from "./_components/to-do-list";
+import { SignInButton } from "@clerk/nextjs";
 export default function Home() {
 
   return (
@@ -11,6 +12,9 @@ export default function Home() {
         <ToDoList />
         <NewToDoForm />
       </Authenticated>
+      <Unauthenticated>
+        <SignInButton />
+      </Unauthenticated>
     </div>
   );
 }
